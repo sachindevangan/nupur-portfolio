@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+:root {
+  /* Brand — aligned with tailwind.config.ts `brand.*` */
+  --color-brand-coral: #db5e5e;
+  --color-brand-navy: #1e1e1e;
+  --color-brand-cream: #f9f6e5;
+  --color-brand-cream-muted: #e5e3c9;
+  --color-brand-surface: #e2e2e2;
+
+  /* Semantic aliases */
+  --color-background: var(--color-brand-coral);
+  --color-foreground: var(--color-brand-navy);
+  --color-muted: #ffffff;
+
+  /* Radius tokens (see theme.extend.borderRadius) */
+  --radius-card: 3rem;
+  --radius-box: 0;
+  --radius-stamp: 0.125rem;
+}
+
+@theme inline {
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --font-sans: var(--font-nunito);
+}
+
+body {
+  background-color: var(--color-brand-coral);
+  color: var(--color-brand-navy);
+  font-family: var(--font-nunito), system-ui, sans-serif;
+}
+
+@keyframes contactCardFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(-0.35deg);
+  }
+}
+
+.contact-card-float {
+  animation: contactCardFloat 2.25s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.contact-card-float-delay-1 {
+  animation-delay: 0s;
+}
+
+.contact-card-float-delay-2 {
+  animation-delay: 0.35s;
+}
+
+.contact-card-float-delay-3 {
+  animation-delay: 0.7s;
+}
+
+.contact-card-float-delay-4 {
+  animation-delay: 1.05s;
+}
