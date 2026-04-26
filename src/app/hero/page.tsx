@@ -34,6 +34,7 @@ const projects = [
       "This end-to-end analysis of Olympic figure skating (2006–2026) quantifies the balance between technical and artistic performance using a custom 'tech dominance' metric. I built the dataset from scratch and used Python and interactive visuals to reveal how scoring trends have evolved over time.",
     gif: "/images/projects/new-skating.gif",
     mp4: "/images/projects/new-skating.mp4",
+    poster: "/images/projects/new-skating-poster.jpg",
     github: "https://github.com/Nupur-Gudigar/olympic-skating-analysis",
     live: "https://nupur-gudigar.github.io/olympic-skating-analysis/",
     tags: [
@@ -57,6 +58,7 @@ const projects = [
       "A cross-platform desktop application built with React, Vite, and Electron that generates randomized activity suggestions through an interactive spinning wheel. Features state management with Redux, webcam integration, and dynamic UI/UX elements. Fun Fact: This was recognized as a winner in the Codedex x GitHub Education September Coding Challenge.",
     gif: "/images/projects/spintember.gif",
     mp4: "/images/projects/spintember.mp4",
+    poster: "/images/projects/spintember-poster.jpg",
     github: "https://github.com/Nupur-Gudigar/Spintember",
     live: "https://nupur-gudigar.github.io/Spintember/",
     tags: [
@@ -76,6 +78,7 @@ const projects = [
       "A full-screen generative art sketch built with p5.js, featuring layered, animated hearts in shifting shades of pink and red. Designed as a minimal, immersive visual experience with continuous motion and responsive scaling. Fun Fact: this project was featured as a Staff Pick and highlighted in the Codedex newsletter.",
     gif: "/images/projects/hear-screen.gif",
     mp4: "/images/projects/hear-screen.mp4",
+    poster: "/images/projects/hear-screen-poster.jpg",
     github: "https://github.com/Nupur-Gudigar/Heart-Screen",
     live: "https://nupur-gudigar.github.io/Heart-Screen/",
     tags: [
@@ -94,6 +97,7 @@ const projects = [
       "A lightweight audio visualizer built with p5.js and JavaScript, leveraging FFT-based spectrum analysis and beat detection to generate real-time, interactive visuals. Features responsive design, drag-and-drop audio input, and dynamic animations synced to music.",
     gif: "/images/projects/kirby.gif",
     mp4: "/images/projects/kirby.mp4",
+    poster: "/images/projects/kirby-poster.jpg",
     github: "https://github.com/Nupur-Gudigar/Kirby_Visualizer",
     live: "https://nupur-gudigar.github.io/Kirby_Visualizer/",
     tags: [
@@ -721,10 +725,12 @@ function ProjectCarousel() {
                   {shouldUseVideo ? (
                     <video
                       src={project.mp4}
+                      poster={project.poster}
                       autoPlay
                       loop
                       muted
                       playsInline
+                      preload="metadata"
                       onError={() =>
                         setFailedMp4s((prev) => ({ ...prev, [project.title]: true }))
                       }
